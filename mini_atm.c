@@ -3,6 +3,7 @@ int main(){
     int choice;
     float amount;
     float balance=500000;
+    while(1){
     printf("\n=====MINI ATM=====\n");
     printf("1.Check Balance\n,2.Deposite Money\n,3.Withdraw Money\n,4.Exit\n");
     printf("Enter your choice:");
@@ -36,6 +37,7 @@ int main(){
         return 1;
         default:
         printf("Invalid choice! Try again.\n");
+    }
     }
     }
 
