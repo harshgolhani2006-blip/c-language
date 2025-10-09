@@ -36,7 +36,7 @@
 //     printf("number of consonent: %d\n",ccount);
 //     return 0;
 // }
-  #include <stdio.h>
+ #include <stdio.h>
 
 int main() {
     char str[100];
