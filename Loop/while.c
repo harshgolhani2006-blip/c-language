@@ -146,7 +146,7 @@
 //     fact=fact*i;
 //   i++;
 // }
-//   printf("factorial of %d is %d",n,fact);
+//   printf("factorial of %d is %d\n",n,fact);
 // return 1;
 // }
 //

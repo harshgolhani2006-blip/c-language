@@ -138,7 +138,7 @@ int main(){
         }
     }
     if(count==2){
-        printf(" %d ",n);
+        printf(" %d\n ",n);
     }
 }
 return 1;

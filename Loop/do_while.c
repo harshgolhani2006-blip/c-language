@@ -106,12 +106,49 @@
 // printf("\nFactorial of %d :%d\n",n,fact);
 // return 1;
 // }
+// #include<stdio.h>
+// int main(){
+//     int  start,end,i,j;
+//     printf("Enter number to start :");
+//     scanf("%d",&start);
+//     printf("Enter number to end :");
+//     scanf("%d",&end);
+//     i=start;
+//     do{
+//         j=1;
+//         do{
+//             printf("%d * %d = %d\n",i,j,i*j);
+//             j++;
+//         }while(j<=10);
+//         printf("\n");
+//         i++;
+//     }
+//     while(i<=end);
+//     return 0;
+// }
 #include<stdio.h>
 int main(){
-    int  start,end,i,j;
-    printf("Enter number to start :");
-    scanf("%d",&start);
-    printf("Enter number to end :");
-    scanf("%d",&end);
-    i=start;
-    
+int n,i,j,count;
+printf("Enter a number:");
+scanf("%d",&n);
+printf("Prime number from 1 to %d are :\n",n);
+i=2;
+do{
+    count=1;
+    j=2;
+    do{
+        if(i%j==0){
+            count=0;
+            break;
+        }
+        j++;
+    }
+    while(j<=i/2);
+    if(count ==1 && i>1){
+        printf(" %d ",i);
+    }
+    i++;
+}
+while(i<=n);
+return 0;
+}
