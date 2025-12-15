@@ -1,81 +1,72 @@
 #include <stdio.h>
 
-int main() {
-    int n;
-    printf("Enter value of n: ");
-    scanf("%d", &n);
+int n;
+int board[20][20];
 
-    int board[n][n];  
-    int i, j, row, col = 0;
-    int placed;
+int isSafe(int row, int col) {
+    int i, j;
 
-    // initialize board with 0
-    for (i = 0; i < n; i++)
-        for (j = 0; j < n; j++)
-            board[i][j] = 0;
+    // check left row
+    for (i = 0; i < col; i++)
+        if (board[row][i] == 1)
+            return 0;
 
-    while (col >= 0 && col < n) {
-        placed = 0;
+    // check upper diagonal
+    for (i = row, j = col; i >= 0 && j >= 0; i--, j--)
+        if (board[i][j] == 1)
+            return 0;
 
-        for (row = 0; row < n; row++) {
+    // check lower diagonal
+    for (i = row, j = col; i < n && j >= 0; i++, j--)
+        if (board[i][j] == 1)
+            return 0;
 
-            // check left row
-            for (i = 0; i < col; i++)
-                if (board[row][i] == 1)
-                    break;
-            if (i < col) continue;
+    return 1;
+}
 
-            // check upper diagonal
-            for (i = row, j = col; i >= 0 && j >= 0; i--, j--)
-                if (board[i][j] == 1)
-                    break;
-            if (i >= 0 && j >= 0) continue;
+int solve(int col) {
+    if (col == n)
+        return 1;   // all queens placed
 
-            // check lower diagonal
-            for (i = row, j = col; i < n && j >= 0; i++, j--)
-                if (board[i][j] == 1)
-                    break;
-            if (i < n && j >= 0) continue;
+    for (int row = 0; row < n; row++) {
+        if (isSafe(row, col)) {
 
             // place queen
             board[row][col] = 1;
-            placed = 1;
-            break;
+
+            // recursive call
+            if (solve(col + 1))
+                return 1;
+
+            // backtrack
+            board[row][col] = 0;
         }
+    }
+    return 0;
+}
 
-        if (placed)
-            col++;
-        else {
-            col--;
-            if (col < 0) break;
+int main() {
+    printf("Enter value of n: ");
+    scanf("%d", &n);
 
-            for (row = 0; row < n; row++) {
-                if (board[row][col] == 1) {
-                    board[row][col] = 0;
-                    break;
-                }
+    // initialize board
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            board[i][j] = 0;
+
+    if (solve(0)) {
+        printf("\nSolution:\n");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == 1)
+                    printf(" Q ");
+                else
+                    printf(" . ");
             }
+            printf("\n");
         }
-    }
-
-    // print solution
-    printf("\nSolution:\n");
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < n; j++) {
-            if (board[i][j] == 1)
-                printf(" Q ");
-            else
-                printf(" . ");
-        }
-        printf("\n");
-    }
-    // print positions
-    printf("\nQueen Positions (Row, Column):\n");
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < n; j++) {
-            if (board[i][j] == 1)
-                printf("Queen at (%d, %d)\n", i, j);
-        }
+    } else {
+        printf("No solution exists\n");
     }
 
     return 0;
