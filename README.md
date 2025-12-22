@@ -1,1 +1,1 @@
-Basic Of c Language.
+BASIC OF C LANGUAGE.
