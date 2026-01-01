@@ -282,3 +282,116 @@
 //     }
 //     return 1;
 // }
+//Check whether a number is prime or not.
+// #include<stdio.h>
+// int main(){
+//     int n,i,flag=0;
+
+//     printf("Enter a positive integer: ");
+//     scanf("%d",&n);
+
+//     if(n<=1){
+//         flag=1;
+//     }
+//     for(i=2;i<=n/2;i++){
+//         if(n%i==0){
+//             flag=1;
+//             break;
+//         }
+//     }
+//     if(flag==0){
+//         printf("%d is a prime number.",n);
+//     }else{
+//         printf("%d is not a prime number.",n);
+//     }
+//     return 1;
+// }
+//check whether a number is positive  or negative.
+// #include<stdio.h>
+// int main(){
+//     int n;
+//     printf("Enter a number: ");
+//     scanf("%d",&n);
+//     if(n>0){
+//         printf("%d is a positive number.",n);
+// }else if(n<0){
+//         printf("%d is a negative number.",n);
+//     }else{
+//         printf("The number is zero.");
+//     }
+//     return 1;
+// }
+//Check whether a number is even or odd.
+// #include<stdio.H>
+// int main(){
+//     int n;
+//     printf("Enter a number:");
+//     scanf("%d",&n);
+//     if(n%2==0){
+//         printf("%d is an even number.",n);
+//     }else{
+//         printf("%d is an odd number.",n);
+//     }
+//     return 1;
+// }
+//Find the largest among two numbers.
+// #include<stdio.h>
+// int main(){
+//     int a,b;
+//     printf("Enter first number:");
+//     scanf("%d",&a);
+//     printf("Enter second number:");
+//     scanf("%d",&b);
+//     if(a>b){
+//         printf("%d is the largest number.",a);
+//     }else if(b>a){
+//         printf("%d is the largest number.",b);
+//     }else{
+//         printf("Both numbers are equal.");
+//     }
+//     return 1;
+// }
+//Find the largest among three numbers.
+// #include<stdio.h>
+// int main(){
+//     int a,b,c;
+//     printf("Enter first number:");
+//     scanf("%d",&a);
+//     printf("Enter second number:");
+//     scanf("%d",&b);
+//     printf("Enter third number:");
+//     scanf("%d",&c);
+//     if(a>=b &&a>=c){
+//         printf("%d is the largest number.",a);
+//     }else if(b>=a && b>=c){
+//         printf("%d is the largest number.",b);
+// }
+//     else if(c>=a && c>=b){
+//         printf("%d is the largest number.",c);
+//     }else{
+//         printf("All numbers are equal.");
+//     }
+//     return 1;
+// }
+//Check whether a year is leap year or not.
+#include<stdio.h>
+int main(){
+    int year;
+    printf("Enter a year:");
+    scanf("%d",&year);
+    if(year%4==0){
+        if(year%100==0){
+            if(year%400==0){
+                printf("%d is a leap year.",year);
+            }else{
+                printf("%d is not a leap year.",year);
+            }
+        }else{
+            printf("%d is a leap year.",year);
+        }
+}
+    else{
+        printf("%d is not a leap year.",year);
+    }
+    return 1;
+}
