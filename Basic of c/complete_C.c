@@ -374,24 +374,109 @@
 //     return 1;
 // }
 //Check whether a year is leap year or not.
+// #include<stdio.h>
+// int main(){
+//     int year;
+//     printf("Enter a year:");
+//     scanf("%d",&year);
+//     if(year%4==0){
+//         if(year%100==0){
+//             if(year%400==0){
+//                 printf("%d is a leap year.",year);
+//             }else{
+//                 printf("%d is not a leap year.",year);
+//             }
+//         }else{
+//             printf("%d is a leap year.",year);
+//         }
+// }
+//     else{
+//         printf("%d is not a leap year.",year);
+//     }
+//     return 1;
+// }
+//Check whether a character is vowel or consonant.
+// #include<stdio.h>
+// int main(){
+//     int ch;
+//     printf("Enter a character:");
+//     scanf("%c",&ch);
+//     if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u' || ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U'){
+//         printf("%c is a vowel.",ch);
+//     }else{
+//         printf("%c is a consonant.",ch);
+// }
+//     return 1;
+// }
+//Check whether a character is alphabet or not.
+// #include<stdio.h>
+// int main(){
+//     char ch;
+//     printf("Enter a character:");
+//     scanf("%c",&ch);
+//     if((ch>='a' && ch<='z') || (ch>='A' && ch<='Z')){
+//         printf("%c is an alphabet.",ch);
+//     }else{
+//         printf("%c is not an alphabet.",ch);
+//     }
+//     return 1;
+// }
+//Find the largest among n numbers.
+// #include<stdio.h>
+// int main(){
+//     int n,i;
+//     float num,largest;
+
+//     printf("Enter how many numbers: ");
+//     scanf("%d",&n);
+
+//     printf("Enter number 1: ");
+//     scanf("%f",&num);
+//     largest=num;
+
+//     for(i=2;i<=n;i++){
+//         printf("Enter number %d: ",i);
+//         scanf("%f",&num);
+//         if(num>largest){
+//             largest=num;
+//         }
+//     }
+//     printf("The largest number is: %f",largest);
+//     return 1;
+// }
+//Find the smallest among n numbers.
+// #include<stdio.h>
+// int main(){
+//     int n,i;
+//     float num,smallest;
+//     printf("Enter how many numbers: ");
+//     scanf("%d",&n);
+//     printf("Enter number 1: ");
+//     scanf("%f",&num);
+//     smallest=num;
+
+//     for(i=2;i<=n;i++){
+//         printf("Enter number %d: ",i);
+//         scanf("%f",&num);
+//         if(num<smallest){
+//             smallest=num;
+//         }
+//     }
+//     printf("The smallest number is: %f",smallest);
+//     return 1;
+// }
+//Check whether a character is uppercase or lowercase.
 #include<stdio.h>
 int main(){
-    int year;
-    printf("Enter a year:");
-    scanf("%d",&year);
-    if(year%4==0){
-        if(year%100==0){
-            if(year%400==0){
-                printf("%d is a leap year.",year);
-            }else{
-                printf("%d is not a leap year.",year);
-            }
-        }else{
-            printf("%d is a leap year.",year);
-        }
-}
-    else{
-        printf("%d is not a leap year.",year);
+    char ch;
+    printf("Enter a character:");
+    scanf("%c",&ch);
+    if(ch>='A' && ch<='Z'){
+        printf("%c is an uppercase letter.",ch);
+    }else if(ch>='a' && ch<='z'){
+        printf("%c is a lowercase letter.",ch);
+    }else{
+        printf("%c is not an alphabet.",ch);
     }
     return 1;
 }
