@@ -466,17 +466,84 @@
 //     return 1;
 // }
 //Check whether a character is uppercase or lowercase.
+// #include<stdio.h>
+// int main(){
+//     char ch;
+//     printf("Enter a character:");
+//     scanf("%c",&ch);
+//     if(ch>='A' && ch<='Z'){
+//         printf("%c is an uppercase letter.",ch);
+//     }else if(ch>='a' && ch<='z'){
+//         printf("%c is a lowercase letter.",ch);
+//     }else{
+//         printf("%c is not an alphabet.",ch);
+//     }
+//     return 1;
+//}
+//wap to add, sub, div,mult.
+// #include<stdio.h>
+// int main(){
+//     int choice;
+//     float a,b,result;
+//     printf("Select operation to perform:\n");
+//     printf("1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n");
+//     printf("Enter your choice (1-4): ");
+//     scanf("%d",&choice);
+//     printf("Enter first numbers: ");
+//     scanf("%f",&a);
+//     printf("Enter second numbers: ");
+//     scanf("%f",&b);
+//     switch(choice){
+//         case 1:
+//             result=a+b;
+//             printf("Result: %f\n",result);
+//             break;
+//         case 2:
+//             result=a-b;
+//             printf("Result: %f\n",result);
+//             break;
+//         case 3:
+//             result=a*b;
+//             printf("Result: %f\n",result);
+//             break;
+//         case 4:
+//             if(b!=0){
+//                 result=a/b;
+//                 printf("Result: %f\n",result);
+//             }else{
+//                 printf("Error: Division by zero is not allowed.\n");
+//             }
+//             break;
+//         default:
+//             printf("Invalid choice.\n");
+//     }
+// }
+//Wap to find the largest number using switch case.
 #include<stdio.h>
 int main(){
-    char ch;
-    printf("Enter a character:");
-    scanf("%c",&ch);
-    if(ch>='A' && ch<='Z'){
-        printf("%c is an uppercase letter.",ch);
-    }else if(ch>='a' && ch<='z'){
-        printf("%c is a lowercase letter.",ch);
-    }else{
-        printf("%c is not an alphabet.",ch);
+    int choice;
+    float a,b,c,largest;
+    printf("Enter three numbers: ");
+    scanf("%f %f %f",&a,&b,&c);
+    printf("Select option to find the largest number:\n");
+    printf("1. Compare a and b\n2. Compare b and c\n3. Compare a and c\n");
+    printf("Enter your choice (1-3): ");
+    scanf("%d",&choice);
+    switch(choice){
+        case 1:
+            largest=(a>b)?a:b;
+            printf("The largest number is: %f\n",largest);
+            break;
+        case 2:
+            largest=(b>c)?b:c;
+            printf("The largest number is: %f\n",largest);
+            break;
+        case 3:
+            largest=(a>c)?a:c;
+            printf("The largest number is: %f\n",largest);
+            break;
+        default:
+            printf("Invalid choice.\n");
     }
     return 1;
 }
