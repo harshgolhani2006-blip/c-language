@@ -519,28 +519,158 @@
 //     }
 // }
 //Wap to find the largest number using switch case.
+// #include<stdio.h>
+// int main(){
+//     int choice;
+//     float a,b,c,largest;
+//     printf("Enter three numbers: ");
+//     scanf("%f %f %f",&a,&b,&c);
+//     printf("Select option to find the largest number:\n");
+//     printf("1. Compare a and b\n2. Compare b and c\n3. Compare a and c\n");
+//     printf("Enter your choice (1-3): ");
+//     scanf("%d",&choice);
+//     switch(choice){
+//         case 1:
+//             largest=(a>b)?a:b;
+//             printf("The largest number is: %f\n",largest);
+//             break;
+//         case 2:
+//             largest=(b>c)?b:c;
+//             printf("The largest number is: %f\n",largest);
+//             break;
+//         case 3:
+//             largest=(a>c)?a:c;
+//             printf("The largest number is: %f\n",largest);
+//             break;
+//         default:
+//             printf("Invalid choice.\n");
+//     }
+//     return 1;
+// }
+//Wap to find the factorial of number using switch case.
+// #include<stdio.h>
+// int main(){
+//     int n,i,factorial=1,choice;
+//     printf("Enter a positive integer: ");
+//     scanf("%d",&n);
+//     printf("Select option to calculate factorial:\n");
+//     printf("1. Using for loop\n2. Using while loop\n");
+//     printf("Enter your choice (1-2): ");
+//     scanf("%d",&choice);
+//     switch(choice){
+//         case 1:
+//             for(i=1;i<=n;i++){
+//                 factorial=factorial*i;
+//             }
+//             printf("Factorial of %d = %d\n",n,factorial);
+//             break;
+//         case 2:
+//             i=1;
+//             while(i<=n){
+//                 factorial=factorial*i;
+//                 i++;
+//             }
+//             printf("Factorial of %d = %d\n",n,factorial);
+//             break;
+//         default:
+//             printf("Invalid choice.\n");
+//     }
+//     return 1;
+// }
+//Wap to check whether a number is even or odd using switch case.
+// #include<stdio.h>
+// int main(){
+//     int n,choice;
+//     printf("Enter a number:");
+//     scanf("%d",&n);
+//     printf("Select option to check even or odd:\n");
+//     printf("1. Using if-else\n2. Using conditional operator\n");
+//     printf("Enter your choice (1-2): ");
+//     scanf("%d",&choice);
+//     switch(choice){
+//         case 1:
+//             if(n%2==0){
+//                 printf("%d is an even number.\n",n);
+//             }else{
+//                 printf("%d is an odd number.\n",n);
+//             }
+//             break;
+//         case 2:
+//             (n%2==0)?
+//             printf("%d is an even number.\n",n):printf("%d is an odd number.\n",n);
+//             break;
+//         default:
+//             printf("Invalid choice.\n");
+//     }
+//     return 1;
+// }
+//Wap to check whether a character is vowel or consonant using switch case.
+// #include<stdio.h>
+// int main(){
+//     char ch;
+//     int choice;
+//     printf("Enter a character:");
+//     scanf("%c",&ch);
+//     printf("Select option to check vowel or consonant:\n");
+//     printf("1. Using if-else\n2. Using switch-case\n");
+//     printf("Enter your choice (1-2): ");
+//     scanf("%d",&choice);
+//     switch(choice){
+//         case 1:
+//             if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u' || ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U'){
+//                 printf("%c is a vowel.\n",ch);
+//             }else{
+//                 printf("%c is a consonant.\n",ch);
+//             }
+//             break;
+//         case 2:
+//             switch(ch){
+//                 case 'a': case 'e': case 'i': case 'o': case 'u':
+//                 case 'A': case 'E': case 'I': case 'O': case 'U':
+//                     printf("%c is a vowel.\n",ch);
+//                     break;
+//                 default:
+//                     printf("%c is a consonant.\n",ch);
+//             }
+//             break;
+//         default:
+//             printf("Invalid choice.\n");
+//     }
+//     return 1;
+// }
+//Wap to find the area of circle, rectangle, triangle using switch case.
 #include<stdio.h>
 int main(){
     int choice;
-    float a,b,c,largest;
-    printf("Enter three numbers: ");
-    scanf("%f %f %f",&a,&b,&c);
-    printf("Select option to find the largest number:\n");
-    printf("1. Compare a and b\n2. Compare b and c\n3. Compare a and c\n");
+    float area, radius, length, breadth, base, height;
+
+    printf("Select shape to calculate area:\n");
+    printf("1. Circle\n2. Rectangle\n3. Triangle\n");
     printf("Enter your choice (1-3): ");
     scanf("%d",&choice);
+
     switch(choice){
         case 1:
-            largest=(a>b)?a:b;
-            printf("The largest number is: %f\n",largest);
+            printf("Enter radius of circle: ");
+            scanf("%f",&radius);
+            area=3.14*radius*radius;
+            printf("Area of circle: %f\n",area);
             break;
         case 2:
-            largest=(b>c)?b:c;
-            printf("The largest number is: %f\n",largest);
+            printf("Enter length of rectangle: ");
+            scanf("%f",&length);
+            printf("Enter breadth of rectangle: ");
+            scanf("%f",&breadth);
+            area=length*breadth;
+            printf("Area of rectangle: %f\n",area);
             break;
         case 3:
-            largest=(a>c)?a:c;
-            printf("The largest number is: %f\n",largest);
+            printf("Enter base of triangle: ");
+            scanf("%f",&base);
+            printf("Enter height of triangle: ");
+            scanf("%f",&height);
+            area=0.5*base*height;
+            printf("Area of triangle: %f\n",area);
             break;
         default:
             printf("Invalid choice.\n");
